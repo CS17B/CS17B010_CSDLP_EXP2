@@ -1,0 +1,23 @@
+
+
+CHIP AddorSub16 {
+    IN a[16], b[16],x;
+    OUT out[16];
+
+    PARTS:
+    Xor16(a=b,b[0..15]=true,out=oo);
+    Mux16(a=b,b=oo,sel=x,out=oout);
+    Add16(a=oout,b[0]=x,out=out2);
+    Add16(a=a,b=out2,out=out);
+   
+}
+
+
+
+
+
+
+
+
+
+
